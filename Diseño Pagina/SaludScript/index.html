@@ -19,6 +19,8 @@
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
 </head>
 
 <body id="page-top">
@@ -140,26 +142,31 @@
         </nav>
        
         <!-- Begin Page Content -->
-        <div class="container-fluid">
+        <div w3-include-html="ficha.html"></div>
+		<script>
+			w3IncludeHTML();
+		</script>
+		<div class="container-fluid">
 
           <!--  -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4" >
             <h1 class="h3 mb-0 text-gray-800">Editor Fichas Clinicas</h1>
 			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"> Crear Ficha </button>
+			<button type="button" onclick="w3IncludeHTML();">lul</button>
           </div>
 		  <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Nombre Paciente</h4>
+						<input type="text" name="name"><h6>Nombre Paciente</h6></input>
+						<input type="text" name="name"><h6>RUT Paciente</h6></input>
 					</div>
 					<div class="modal-body">
-						<p>Datos Paciente&hellip;</p>
+						<textarea input="text" name="lul" placeholder="Datos Paciente..."></textarea>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-						<button type="button" class="btn btn-primary">Crear</button>
+						<button type="button" class="btn btn-primary" onclick="lul()">Crear</button>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
