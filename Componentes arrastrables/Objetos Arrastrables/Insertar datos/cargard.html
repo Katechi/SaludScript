@@ -12,11 +12,13 @@ div {
   border: 10px solid orange;
 }
 </style>
-<script src="funcion2.js" ></script>
+<script src="funcion3.js" ></script>
                 </head>
                 <body>
-<div id="files" align="center" name="files[]" onchange="subir()"><span>Arrastra el archivo AQUI</span></div>
-<output id="list"></output>
+                  <form action="#" method="POST">
+                      <input type="file" id="subir" name="archivo" >
+                      <input type="submit" value="archivo" onclick="cargar()">
+                  </form>
 
 </body>
 </html>
