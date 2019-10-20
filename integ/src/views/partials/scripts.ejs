@@ -1,0 +1,105 @@
+<script>
+
+    function crearFicha() {
+        // Form
+        var f = document.createElement("form");
+        f.setAttribute('method', "post");
+        f.setAttribute('action', "/index");
+        f.setAttribute('class', "card card-body");
+
+        //row 1
+        var r1 = document.createElement("div");
+        r1.setAttribute('class', "form-row");
+
+        // Nombre completo
+        var c1 = document.createElement("div");
+        c1.setAttribute('class', "col-5");
+
+        var l1 = document.createElement("label");
+        l1.setAttribute('for', "nombre");
+        l1.innerHTML = "Nombre Paciente";
+        
+        var i1 = document.createElement("input");
+        i1.setAttribute('type', "text");
+        i1.setAttribute('class', "form-control")
+        i1.setAttribute('name', "nombre");
+        i1.setAttribute('id', "nombre");
+        i1.setAttribute('placeholder', "Nombre");
+        i1.setAttribute('autofocus', "");
+
+        c1.appendChild(l1);
+        c1.appendChild(i1);
+
+        //Tipo de identificacion
+        var c2 = document.createElement("div");
+        c2.setAttribute('class', "col-4");
+
+        var l2 = document.createElement("label");
+        l2.setAttribute('for', "tipo_id");
+        l2.innerHTML = "Tipo de documentacion"
+
+        var e2 = document.createElement("select");
+        e2.setAttribute('class', "form-control");
+        
+        var i2_1 = document.createElement("option");
+        i2_1.innerHTML = "Cedula de identidad";
+        var i2_2 = document.createElement("option");
+        i2_2.innerHTML = "Pasaporte";
+        var i2_3 = document.createElement("option");
+        i2_3.innerHTML = "Otro";
+        
+        e2.appendChild(i2_1);
+        e2.appendChild(i2_2);
+        e2.appendChild(i2_3);
+        c2.appendChild(l2);
+        c2.appendChild(e2);
+        
+        //Numero documento
+        var c3 = document.createElement("div");
+        c3.setAttribute('class', "col-3");
+
+        var l3 = document.createElement("label");
+        l3.setAttribute('for', "numero_id");
+        l3.innerHTML = "Numero de documento";
+        
+        var i3 = document.createElement("input");
+        i3.setAttribute('type', "text");
+        i3.setAttribute('class', "form-control")
+        i3.setAttribute('name', "numero_id");
+        i3.setAttribute('id', "numero_id");
+        i3.setAttribute('placeholder', "12.345.678-9");
+        i3.setAttribute('autofocus', "");
+
+        c3.appendChild(l3);
+        c3.appendChild(i3);
+
+        
+        //Submit
+        var rx = document.createElement("div");
+        rx.setAttribute('class', "form-row");
+
+        var cx = document.createElement("div");
+        cx.setAttribute('class', "col-1");
+
+        var s = document.createElement("input");
+        s.setAttribute('type', "submit");
+        s.setAttribute('value', "Submit");
+        s.setAttribute('class', "btn btn-primary");
+
+        cx.appendChild(s);
+
+        //append
+        r1.appendChild(c1);
+        r1.appendChild(c2);
+        r1.appendChild(c3);
+        rx.appendChild(cx);
+        f.appendChild(r1);
+        f.appendChild(rx);
+
+        //and some more input elements here
+        //and dont forget to add a submit button
+
+        document.getElementById('datos').appendChild(f);
+    }
+
+</script>
