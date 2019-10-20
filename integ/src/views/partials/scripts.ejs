@@ -3,11 +3,11 @@
     function crearFicha() {
         // Form
         var f = document.createElement("form");
-        f.setAttribute('method', "post");
-        f.setAttribute('action', "/index");
+        f.setAttribute('method', "POST");
+        f.setAttribute('action', "/");
         f.setAttribute('class', "card card-body");
 
-        //row 1
+        //Row 1
         var r1 = document.createElement("div");
         r1.setAttribute('class', "form-row");
 
@@ -21,7 +21,7 @@
         
         var i1 = document.createElement("input");
         i1.setAttribute('type', "text");
-        i1.setAttribute('class', "form-control")
+        i1.setAttribute('class', "form-control");
         i1.setAttribute('name', "nombre");
         i1.setAttribute('id', "nombre");
         i1.setAttribute('placeholder', "Nombre");
@@ -35,17 +35,21 @@
         c2.setAttribute('class', "col-4");
 
         var l2 = document.createElement("label");
-        l2.setAttribute('for', "tipo_id");
-        l2.innerHTML = "Tipo de documentacion"
+        l2.setAttribute('for', "doc");
+        l2.innerHTML = "Tipo de documentacion";
 
         var e2 = document.createElement("select");
         e2.setAttribute('class', "form-control");
+        e2.setAttribute('name', "doc");
         
         var i2_1 = document.createElement("option");
+        i2_1.setAttribute('value', "Cedula de identidad");
         i2_1.innerHTML = "Cedula de identidad";
         var i2_2 = document.createElement("option");
+        i2_2.setAttribute('value', "Pasaporte");
         i2_2.innerHTML = "Pasaporte";
         var i2_3 = document.createElement("option");
+        i2_3.setAttribute('value', "Otro");
         i2_3.innerHTML = "Otro";
         
         e2.appendChild(i2_1);
@@ -59,20 +63,208 @@
         c3.setAttribute('class', "col-3");
 
         var l3 = document.createElement("label");
-        l3.setAttribute('for', "numero_id");
+        l3.setAttribute('for', "numero_doc");
         l3.innerHTML = "Numero de documento";
         
         var i3 = document.createElement("input");
         i3.setAttribute('type', "text");
-        i3.setAttribute('class', "form-control")
-        i3.setAttribute('name', "numero_id");
-        i3.setAttribute('id', "numero_id");
+        i3.setAttribute('class', "form-control");
+        i3.setAttribute('name', "numero_doc");
+        i3.setAttribute('id', "numero_doc");
         i3.setAttribute('placeholder', "12.345.678-9");
         i3.setAttribute('autofocus', "");
 
         c3.appendChild(l3);
         c3.appendChild(i3);
 
+        //Row 2
+        var r2 = document.createElement("div");
+        r2.setAttribute('class', "form-row");
+
+        //Sexo
+        var c4 = document.createElement("div");
+        c4.setAttribute('class', "col-3");
+
+        var l4 = document.createElement("label");
+        l4.setAttribute('for', "sexo");
+        l4.innerHTML = "Sexo";
+
+        var e4 = document.createElement("select");
+        e4.setAttribute('class', "form-control");
+        e4.setAttribute('name', "sexo");
+        
+        var i4_1 = document.createElement("option");
+        i4_1.setAttribute('value', "Masculino");
+        i4_1.innerHTML = "Masculino";
+        var i4_2 = document.createElement("option");
+        i4_2.setAttribute('value', "Femenino");
+        i4_2.innerHTML = "Femenino";
+        var i4_3 = document.createElement("option");
+        i4_3.setAttribute('value', "Otro");
+        i4_3.innerHTML = "Otro";
+
+        e4.appendChild(i4_1);
+        e4.appendChild(i4_2);
+        e4.appendChild(i4_3);
+        c4.appendChild(l4);
+        c4.appendChild(e4);
+
+        //Fecha de nacimiento
+        var c5 = document.createElement("div");
+        c5.setAttribute('class', "col-3");
+
+        var l5 = document.createElement("label");
+        l5.setAttribute('for', "fecha_nac");
+        l5.innerHTML = "Fecha de naciemiento";
+
+        var i5 = document.createElement("input");
+        i5.setAttribute('type', "date");
+        i5.setAttribute('class', "form-control")
+        i5.setAttribute('name', "fecha_nac");
+        i5.setAttribute('id', "fecha_nac");
+        i5.setAttribute('autofocus', "");
+
+        c5.appendChild(l5);
+        c5.appendChild(i5);
+
+        //Domicilio
+        var c6 = document.createElement("div");
+        c6.setAttribute('class', "col-6");
+
+        var l6 = document.createElement("label");
+        l6.setAttribute('for', "domicilio");
+        l6.innerHTML = "Domicilio";
+        
+        var i6 = document.createElement("input");
+        i6.setAttribute('type', "text");
+        i6.setAttribute('class', "form-control")
+        i6.setAttribute('name', "domicilio");
+        i6.setAttribute('id', "domicilio");
+        i6.setAttribute('placeholder', "Calle #1234");
+        i6.setAttribute('autofocus', "");
+
+        c6.appendChild(l6);
+        c6.appendChild(i6);
+
+        //Row 3
+        var r3 = document.createElement("div");
+        r3.setAttribute('class', "form-row");
+
+        //Telefono
+        var c7 = document.createElement("div");
+        c7.setAttribute('class', "col-4");
+
+        var l7 = document.createElement("label");
+        l7.setAttribute('for', "telefono");
+        l7.innerHTML = "Telefono de contacto";
+        
+        var i7 = document.createElement("input");
+        i7.setAttribute('type', "text");
+        i7.setAttribute('class', "form-control")
+        i7.setAttribute('name', "telefono");
+        i7.setAttribute('id', "telefono");
+        i7.setAttribute('placeholder', "9-12345678");
+        i7.setAttribute('autofocus', "");
+
+        c7.appendChild(l7);
+        c7.appendChild(i7);
+
+        //Correo electronico
+        var c8 = document.createElement("div");
+        c8.setAttribute('class', "col-4");
+
+        var l8 = document.createElement("label");
+        l8.setAttribute('for', "correo");
+        l8.innerHTML = "Correo electronico";
+        
+        var i8 = document.createElement("input");
+        i8.setAttribute('type', "email");
+        i8.setAttribute('class', "form-control")
+        i8.setAttribute('name', "correo");
+        i8.setAttribute('id', "correo");
+        i8.setAttribute('placeholder', "correo@electronico.com");
+        i8.setAttribute('autofocus', "");
+
+        c8.appendChild(l8);
+        c8.appendChild(i8);
+
+        //Ocupacion
+        var c9 = document.createElement("div");
+        c9.setAttribute('class', "col-4");
+
+        var l9 = document.createElement("label");
+        l9.setAttribute('for', "ocupacion");
+        l9.innerHTML = "Ocupacion";
+        
+        var i9 = document.createElement("input");
+        i9.setAttribute('type', "text");
+        i9.setAttribute('class', "form-control")
+        i9.setAttribute('name', "ocupacion");
+        i9.setAttribute('id', "ocupacion");
+        i9.setAttribute('placeholder', "");
+        i9.setAttribute('autofocus', "");
+
+        c9.appendChild(l9);
+        c9.appendChild(i9);
+
+        //Row 4
+        var r4 = document.createElement("div");
+        r4.setAttribute('class', "form-row");
+
+        //Representante
+        var c10 = document.createElement("div");
+        c10.setAttribute('class', "col-6");
+
+        var l10 = document.createElement("label");
+        l10.setAttribute('for', "representante");
+        l10.innerHTML = "Representante legal o apoderado";
+        
+        var i10 = document.createElement("input");
+        i10.setAttribute('type', "text");
+        i10.setAttribute('class', "form-control")
+        i10.setAttribute('name', "representante");
+        i10.setAttribute('id', "representante");
+        i10.setAttribute('placeholder', "Nombres Apellidos");
+        i10.setAttribute('autofocus', "");
+
+        c10.appendChild(l10);
+        c10.appendChild(i10);
+
+        //Sistema de salud
+        var c11 = document.createElement("div");
+        c11.setAttribute('class', "col-6");
+
+        var l11 = document.createElement("label");
+        l11.setAttribute('for', "sistema");
+        l11.innerHTML = "Sistema de salud";
+
+        var e11 = document.createElement("select");
+        e11.setAttribute('class', "form-control");
+        e11.setAttribute('name', "sistema");
+        
+        var i11_1 = document.createElement("option");
+        i11_1.setAttribute('value', "FONASA A");
+        i11_1.innerHTML = "FONASA A";
+        var i11_2 = document.createElement("option");
+        i11_2.setAttribute('value', "FONASA B");
+        i11_2.innerHTML = "FONASA B";
+        var i11_3 = document.createElement("option");
+        i11_3.setAttribute('value', "FONASA C");
+        i11_3.innerHTML = "FONASA C";
+        var i11_4 = document.createElement("option");
+        i11_4.setAttribute('value', "FONASA D");
+        i11_4.innerHTML = "FONASA D";
+        var i11_5 = document.createElement("option");
+        i11_5.setAttribute('value', "ISAPRES");
+        i11_5.innerHTML = "ISAPRES";
+
+        e11.appendChild(i11_1);
+        e11.appendChild(i11_2);
+        e11.appendChild(i11_3);
+        e11.appendChild(i11_4);
+        e11.appendChild(i11_5);
+        c11.appendChild(l11);
+        c11.appendChild(e11);
         
         //Submit
         var rx = document.createElement("div");
@@ -92,14 +284,31 @@
         r1.appendChild(c1);
         r1.appendChild(c2);
         r1.appendChild(c3);
+        r2.appendChild(c4);
+        r2.appendChild(c5);
+        r2.appendChild(c6);
+        r3.appendChild(c7);
+        r3.appendChild(c8);
+        r3.appendChild(c9);
+        r4.appendChild(c10);
+        r4.appendChild(c11);
         rx.appendChild(cx);
         f.appendChild(r1);
+        f.appendChild(r2);
+        f.appendChild(r3);
+        f.appendChild(r4);
         f.appendChild(rx);
 
-        //and some more input elements here
-        //and dont forget to add a submit button
-
+        // se coloca ficha en div "datos"
         document.getElementById('datos').appendChild(f);
+        
+        //desactivar boton
+        var boton = document.getElementById('creador');
+        boton.disabled = true;
+    }
+
+    function refresh() {
+        return "no se guardara.";
     }
 
 </script>

@@ -12,23 +12,22 @@ router.get("/", (req, res) =>{
     })
 })
 
-router.get("/new_entry", (req, res) =>{
-    res.render("new_entry");
-})
+router.post("/", (req, res) => {
 
-router.post("/new_entry", (req, res) => {
-    const {title, author, image, description} = req.body;
-    if(!title || !author || !image || !description) {
-        res.status(400).send("empty shit");
-        return;
-    }
-
+    const {nombre, doc, numero_doc, sexo, fecha_nac, domicilio, telefono, correo, ocupacion, representante, sistema} = req.body;
     let newFicha = {
         id: uuid(),
-        title,
-        author,
-        image,
-        description
+        nombre,
+        doc,
+        numero_doc,
+        sexo,
+        fecha_nac,
+        domicilio,
+        telefono,
+        correo,
+        ocupacion,
+        representante,
+        sistema
     };
 
     fichas.push(newFicha);
@@ -36,7 +35,7 @@ router.post("/new_entry", (req, res) => {
     const json_fichas = JSON.stringify(fichas)
     fs.writeFileSync("src/ficha.json", json_fichas, "utf-8");
 
-    res.redirect("/");
+    res.sendStatus(200);
 })
 
 router.get("/delete/:id", (req, res) => {
