@@ -1,0 +1,32 @@
+@charset "utf-8";
+*{
+	padding:0;
+	margin:0;
+}
+
+body{
+	background-color: #3C3E74;
+}
+
+header{
+	width:100%;
+	max-width:1024px;
+	height:80px;
+	background:rgba(0,102,102,1);
+	position:relative;
+}
+
+div#pagina{
+	background-color: #44743c;
+    margin: 8rem;
+    padding: 2rem;
+    border: 2px solid #ccc;
+    /* IMPORTANTE */
+    text-align: center;
+}
+
+table#tb{
+	text-align: center;
+	border: 1;
+	margin: 0 auto;
+}
