@@ -1,26 +1,27 @@
 {
-  "name": "nodejs-passport-local",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "saludscript",
+  "version": "2.0.0",
+  "description": "editor de fichas clínicas",
+  "main": "app.js",
   "scripts": {
-    "dev": "nodemon ./src/server.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^1.18.3"
-  },
   "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
+    "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
-    "ejs-mate": "^2.3.0",
-    "express": "^4.16.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.15.6",
-    "mongoose": "^5.7.5",
-    "morgan": "^1.9.1",
+    "mongoose": "^5.7.7",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
   }
 }
