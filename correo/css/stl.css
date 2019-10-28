@@ -1,0 +1,39 @@
+@charset "utf-8";
+*{
+	padding:0;
+	margin:0;
+}
+
+header{
+	width:100%;
+	max-width:1024px;
+	height:80px;
+	background:rgba(0,102,102,1);
+	position:relative;
+}
+
+div#pagina{
+	width:calc(100% - 30px);
+	max-width: 1015px;
+	height:600px;
+	padding:20px 15px;
+	display:table;
+}
+
+div#pagina section{
+	width: 660px;
+	background:rgba(240,240,240,1);
+    display: table-cell;
+    padding-right: 15px;
+    text-align: justify;
+	height:100%;
+}
+
+div#pagina aside{
+	width: 295px;
+	background:rgba(235,235,235,1);
+    display: table-cell;
+    padding-left: 15px;
+    text-align: justify;
+	height:100%;
+}
