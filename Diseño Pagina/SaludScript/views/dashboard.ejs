@@ -1,3 +1,32 @@
-<h1 class="mt-4">Dashboard</h1>
-<p class="lead mb-3">Bienvenido <%= user.name %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SaludScript</title>
+    <style type="text/css">
+
+        h1{
+            text-align: left;
+        }
+        p{
+            text-align: right;
+        
+        }
+        </style>
+        
+  </head>
+  <body>
+<h1 class="mt-4">Ficha Clinica</h1>
+<p class="lead mb-3">Bienvenido/a <%= user.name %></p>
+<br>
+<button>mostrar ficha paciente</button>
+<button>crear ficha </button>
+<br>
 <a href="/users/logout" class="btn btn-secondary">Logout</a>
+  </body>
+</html>
+
+
+
+
+
