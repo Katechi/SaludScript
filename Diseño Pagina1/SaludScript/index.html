@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SaludScript</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Fichas Clinicas</div>
+        
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Importar Ficha</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+
+      <!-- Nav Item - Dashboard -->
+      
+
+      
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Nav Item - Dashboard -->
+      
+     
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        
+      </div>
+
+    </ul>
+   
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <!-- Buscador-->
+          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar Paciente..." aria-label="Search" aria-describedby="basic-addon2">
+             
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button" src="index.html">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+
+            
+              
+
+            
+              
+              
+            <!-- Perfil Usuario -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Dra. Valeria Luna</span>
+                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+              </a>
+             
+               
+            </li>
+
+          </ul>
+
+        </nav>
+       
+        <!-- Begin Page Content -->
+        <div w3-include-html="ficha.html"></div>
+		<script>
+			w3IncludeHTML();
+		</script>
+		<div class="container-fluid">
+
+          <!--  -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4"  >
+            <h1 class="h3 mb-0 text-gray-800">ficha Clinica </h1>
+            <br>
+            <br><br>
+           
+            <br>
+            <div style="text-align: right">
+			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"> Crear Ficha </button>
+			</div>
+          
+          
+		  <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+              <div class="respond"> 
+                  <script>
+                    function cambiar(destino){	if(destino==''){	void(0);	}	
+                    else if(destino=='comenta'){	void(0);	}
+                      else{	location=destino;	}	}
+                  </script> 
+                   <label for="name">Nombre:</label>
+                   <input type="text" name="name" id="name" value="" required="">
+                   <br>
+                   <label for="email">Rut:</label> 
+                  <input type="text" name="email" id="email" value="" required="" onclick="this.value=''">
+                  <form name="selectes" action=""></form>
+                  <form name="form1" method="post" action="/addcomment.php?id=2306" id="enviar_comentario"><label for="opcion">Tipo de sangre:</label> 
+                    <select name="opcion" class="required" onchange="cambiar(this.options[this.selectedIndex].value)"> 
+                      <option value="">Selecciona:</option> 
+                      <option value="">A+</option> 
+                      <option value="">B+</option> 
+                      <option value="">B-</option>
+                      <option value="">A-</option>
+                      <option value="">O-</option>
+                      <option value="">O+</option>
+                      <option value="">otros</option>
+                    </select>
+                   <br>
+                   
+                   <i>Observaciones</i>
+                    <br>
+                    <label for="comment"></label><textarea name="comment" id="comment" cols="35" rows="5"></textarea>
+                    <br>
+                    <input type="checkbox" name="checkbox" id="checkbox">Acepto la <a href="/privacidad.html">política de privacidad</a>.<br><div id="url"></div>
+                    
+                    
+                  </form>
+                </div>
+					</div>
+					
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn btn-primary" onclick="lul()">Crear</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+          <!-- Content Row -->
+          <div class="row">
+
+          
+              <!--Contenedor-->
+
+            <!-- Pie Char -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+
+                
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-6 mb-4">
+
+              
+              
+
+
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+     
+        <div class="container " style="background-color:cornflowerblue ; width: 700px; height: 200px; text-align: left;" >
+          <p>aqui al buscar el nombre </p>
+          <p>aparece la ficha clinica del paciente </p>
+          <p></p>
+          <p></p>    
+               
+        </div>
+      
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
