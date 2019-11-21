@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/header %>
+    <title>Hello World</title>
+</head>
+
+<body>
+
+    <% include partials/navigation %>
+
+    <div class="container p-4">
+        <div class="row">
+            <% fichas.forEach(function (ficha) { %>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <%= ficha.title %> / <%= ficha.author %>
+                    </div>
+                    <img src="<%= ficha.image %>" class="card-img-top">
+                    <div class="card-body">
+                        <p><%= ficha.description %></p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/delete/<%= ficha.id %>" class="btn btn-danger">
+                            Delete
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+
+        </div>
+    </div>
+    <button class="btn btn-primary" id="creador" onclick="crearFicha()">Crear Ficha</button>
+    <div class="w-75 p-4" id="datos">
+
+    </div>
+</body>
+<% include partials/scripts %>
+
+</html>
