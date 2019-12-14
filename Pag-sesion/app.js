@@ -25,6 +25,7 @@ mongoose
 // EJS
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
+app.use(express.static('public'))
 
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
@@ -37,6 +38,8 @@ app.use(
     saveUninitialized: true
   })
 );
+
+
 
 // Passport middleware
 app.use(passport.initialize());
@@ -57,6 +60,6 @@ app.use(function(req, res, next) {
 app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, console.log(`Server iniciado en el port ${PORT}`));
