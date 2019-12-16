@@ -14,6 +14,8 @@ router.get('/register', forwardAuthenticated, (req, res) => res.render('register
 
 // Register
 router.post('/register', (req, res) => {
+
+//Las validaciones 
   const { name, email, password, password2 } = req.body;
   let errors = [];
 
@@ -38,6 +40,7 @@ router.post('/register', (req, res) => {
       password2
     });
   } else {
+  //Busca si ya existe ese email en la base de datos
     User.findOne({ email: email }).then(user => {
       if (user) {
         errors.push({ msg: 'El email ya está siendo usado' });

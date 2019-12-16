@@ -44,10 +44,7 @@
           <a class="nav-link js-scroll-trigger" href="#experience">Fichas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+          <a class="nav-link js-scroll-trigger" href="#education">visualizar Fichas</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="/users/Logout">Logout</a>
@@ -107,7 +104,10 @@
         </div>
         
         <div class= "container my-5">
-        <button class= "btn btn-danger w-20" >Crear ficha </button>
+          <button class="btn btn-primary" id="creador" onclick="crearFicha()">Crear Ficha</button>
+        </div>
+        <div class="w-75 p-4" id="datos">
+
         </div>
         <br>
         
@@ -152,7 +152,7 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
       <div class="w-100">
-        <h2 class="mb-5">Education</h2>
+        <h2 class="mb-5">Fichas</h2>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
@@ -195,6 +195,7 @@
   <script src="js/resume.min.js"></script>
 
 </body>
+<% include partials/scripts %>
 
 </html>
 
