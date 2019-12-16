@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express');// componentes require son componentes para poder complementar la pagina
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const passport = require('passport');
@@ -19,7 +19,7 @@ mongoose
     db,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
-  .then(() => console.log('MongoDB Connected'))
+  .then(() => console.log('MongoDB Connected'))//conexion base de datos
   .catch(err => console.log(err));
 
 // EJS
@@ -57,9 +57,9 @@ app.use(function(req, res, next) {
 });
 
 // Routes
-app.use('/', require('./routes/index.js'));
+app.use('/', require('./routes/index.js'));//extraer componentes de index.js
 app.use('/users', require('./routes/users.js'));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;//variable para porcesar por el puerto 3000
 
-app.listen(PORT, console.log(`Server iniciado en el port ${PORT}`));
+app.listen(PORT, console.log(`Server iniciado en el port ${PORT}`));//se inicia servidor
