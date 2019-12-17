@@ -9,15 +9,15 @@ class Email extends PHPMailer{
     var $tu_nombre;
     var $tu_password;
 
-    /**
- * Constructor de clase
- */
+   /**
+   * Constructor de clase
+   */
     public function __construct($tu_nombre,$tu_email,$tu_password)
     {
       //configuracion general
      $this->IsSMTP(); // protocolo de transferencia de correo
      $this->Host = 'smtp.gmail.com';  // Servidor GMAIL
-     $this->Port = 465; //puerto
+     $this->Port = 465; //puerto que se ocupara
      $this->SMTPAuth = true; // Habilitar la autenticación SMTP
      $this->Username = $this->tu_email=$tu_email;
      $this->Password = $this->tu_password=$tu_password;
@@ -29,7 +29,7 @@ class Email extends PHPMailer{
     }
 
  /**
- * Metodo encargado del envio del e-mail
+ * Metodo encargado del envio del correo de autentificacion
  */
   public function enviar($asunto , $contenido)
     {
@@ -47,7 +47,7 @@ class Email extends PHPMailer{
 	}
 
 }//--> fin clase
-
+	// test de envio de contenido en formato html
 	$contenido_html =  "<div>
 							<p style='color:#F00'>
 								Correo de Prueba $
