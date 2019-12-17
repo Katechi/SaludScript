@@ -2,17 +2,17 @@
     $random = "";
 	$mensaje="";
 	if(isset($_POST["envio"])){
-			include("php/envioCorreo.php");
-			$email = new email("Soporte Salud Script","soporte.saludscript@gmail.com","IntegracionSaludScript");
+			include("php/envioCorreo.php"); //nuestro php que envia el correo
+			$email = new email("Soporte Salud Script","soporte.saludscript@gmail.com","IntegracionSaludScript"); //enviamos - nombre - correo - contraseña_del_correo -
 			$email->agregar($_POST["email"],$_POST["nombre"]);
 			
-            $random = random_int(1000, 9999);			
+            $random = random_int(1000, 9999); //se genera numero aleatorio como password para 2da autentificacion			
 			if ($email->enviar('Clave Secreta de Autentificación:',$random)){
-							
+					// enviamos nuestro numero generado aleatoriamente		
 					$mensaje = $random;
             }			
 			else{
-						   
+					//en caso de error:	   
 			   $mensaje= 'Mensaje no enviado';
 			   $email->ErrorInfo;
 			}
@@ -63,7 +63,8 @@
             	</form>
             </div>
             <?php
-				echo "Clave de Autentificación: ${mensaje}";
+                // muestra la clave que se envio para verificar coincidencia con la que llego al correo
+				echo "(test) Clave de Autentificación: ${mensaje}";
 			?>
         </section>
     </div>
